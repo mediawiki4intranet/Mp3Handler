@@ -1,10 +1,10 @@
-This is a very basic Mp3Handler that relies on dewplayer, dewplayer is not
-"free", it is released under the CC-BY-ND license, though it costs no money.
+This is a very basic Mp3Handler, using a player from http://flash-mp3-player.net/
+which is free and opensource, released under CC-BY-SA.
 
 To install:
 
 1. create the extensions/Mp3Handler/ directory
-2. Put Mp3Handler.php, download.png and dewplayer.swf into extensions/Mp3Handler.php
+2. Put Mp3Handler.php, download.png and mp3player.swf into extensions/Mp3Handler/
 3. Add require_once( "$IP/extensions/Mp3Handler/Mp3Handler.php" ); to LocalSettings.php
 
 Advanced:
@@ -19,6 +19,6 @@ playing in the browser, you should configure your webserver to set the mimetype
 to "application/octet-stream", you can override $wgMp3DownloadPath if that
 makes this easier for you.
 
-If you want to add support for different Mp3 players to this extension (ideally
-"free" ones) please do, if you haven't access to Subversion, my contact details
-are at http://svn.wikimedia.org/viewvc/mediawiki/USERINFO/conrad?view=markup.
+Authors:
+Conrad Irwin (http://svn.wikimedia.org/viewvc/mediawiki/USERINFO/conrad?view=markup)
+Vitaliy Filippov (http://svn.wikimedia.org/viewvc/mediawiki/USERINFO/vitalif?view=markup)

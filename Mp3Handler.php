@@ -20,8 +20,8 @@ $wgExtensionCredits['media'][] = array(
 $wgMediaHandlers['audio/mp3'] = 'Mp3Handler';
 $wgFileExtensions[] = 'mp3';
 
-# Default $wgScriptPath/extensions/Mp3Handler/dewplayer.swf
-$wgDewplayerPath = false;
+# Default $wgScriptPath/extensions/Mp3Handler/mp3player.swf
+$wgMp3playerPath = false;
 
 # Default $wgScriptPath/extensions/Mp3Handler/download.png
 $wgMp3DownloadIcon = false;
@@ -55,10 +55,10 @@ class Mp3Output extends MediaTransformOutput {
 	}
 
 	function toHtml( $options = array() ) {
-		global $wgDewplayerPath, $wgMp3DownloadPath, $wgMp3DownloadIcon, $wgScriptPath;
+		global $wgMp3playerPath, $wgMp3DownloadPath, $wgMp3DownloadIcon, $wgScriptPath;
 
-		if ( $wgDewplayerPath === false ) {
-			$wgDewplayerPath = $wgScriptPath . "/extensions/Mp3Handler/dewplayer.swf";
+		if ( $wgMp3playerPath === false ) {
+			$wgMp3playerPath = $wgScriptPath . "/extensions/Mp3Handler/mp3player.swf";
 		}
 		if ( $wgMp3DownloadIcon === false ) {
 			$wgMp3DownloadIcon = $wgScriptPath . "/extensions/Mp3Handler/download.png";
@@ -70,15 +70,15 @@ class Mp3Output extends MediaTransformOutput {
 			$down_url = str_replace( '$1', $this->path, $wgMp3DownloadPath );
 			$download = <<<HTML
 <a href="$down_url" title="Download">
-	<img src="$wgMp3DownloadIcon" alt="Download" style="vertical-align: top; margin-left: 0pt; margin-top: 2px;">
+	<img src="$wgMp3DownloadIcon" alt="Download" style="vertical-align: top; margin: 0">
 </a>
 HTML;
 		}
 		$path = $this->path;
-		$url = "$wgDewplayerPath?mp3=".urlencode($path)."&amp;showtime=1";
+		$url = "$wgMp3playerPath?mp3=".urlencode($path)."&amp;showinfo=1&amp;showvolume=1&amp;showslider=1&amp;width=250&amp;height=16&amp;showstop=0";
 		return <<<HTML
-<span class="dewWrapper">
-<object style="vertical-align: top;" type="application/x-shockwave-flash" data="$url" width="197" height="21">
+<span class="mp3Wrapper">
+<object style="vertical-align: top;" type="application/x-shockwave-flash" data="$url" width="250" height="16">
 	<param name="wmode" value="transparent" />
 	<param name="movie" value="$url" />
 </object>
