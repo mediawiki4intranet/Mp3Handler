@@ -1,0 +1,24 @@
+This is a very basic Mp3Handler that relies on dewplayer, dewplayer is not
+"free", it is released under the CC-BY-ND license, though it costs no money.
+
+To install:
+
+1. create the extensions/Mp3Handler/ directory
+2. Put Mp3Handler.php, download.png and dewplayer.swf into extensions/Mp3Handler.php
+3. Add require_once( "$IP/extensions/Mp3Handler/Mp3Handler.php" ); to LocalSettings.php
+
+Advanced:
+
+If your extensions directory is in a non-standard location, you'll have to update:
+
+1. $wgDewplayerPath (default: $wgScriptPath/extensions/Mp3Handler/dewplayer.swf)
+2. $wgMp3DownloadIcon (default: $wgScriptPath/extensions/Mp3Handler/download.png)
+
+If you want to make sure that "download" really does download, instead of
+playing in the browser, you should configure your webserver to set the mimetype
+to "application/octet-stream", you can override $wgMp3DownloadPath if that
+makes this easier for you.
+
+If you want to add support for different Mp3 players to this extension (ideally
+"free" ones) please do, if you haven't access to Subversion, my contact details
+are at http://svn.wikimedia.org/viewvc/mediawiki/USERINFO/conrad?view=markup.
