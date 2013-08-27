@@ -18,6 +18,7 @@ $wgExtensionCredits['media'][] = array(
 );
 
 $wgMediaHandlers['audio/mp3'] = 'Mp3Handler';
+$wgMediaHandlers['audio/mpeg'] = 'Mp3Handler';
 $wgFileExtensions[] = 'mp3';
 
 # Default $wgScriptPath/extensions/Mp3Handler/mp3player.swf
