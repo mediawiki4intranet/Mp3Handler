@@ -3,7 +3,7 @@ which is free and opensource, released under CC-BY-SA.
 
 To install:
 
-1. create the extensions/Mp3Handler/ directory
+1. Create the extensions/Mp3Handler/ directory
 2. Put Mp3Handler.php, download.png and mp3player.swf into extensions/Mp3Handler/
 3. Add require_once( "$IP/extensions/Mp3Handler/Mp3Handler.php" ); to LocalSettings.php
 
@@ -11,7 +11,7 @@ Advanced:
 
 If your extensions directory is in a non-standard location, you'll have to update:
 
-1. $wgDewplayerPath (default: $wgScriptPath/extensions/Mp3Handler/dewplayer.swf)
+1. $wgMp3playerPath (default: $wgScriptPath/extensions/Mp3Handler/mp3player.swf)
 2. $wgMp3DownloadIcon (default: $wgScriptPath/extensions/Mp3Handler/download.png)
 
 If you want to make sure that "download" really does download, instead of
